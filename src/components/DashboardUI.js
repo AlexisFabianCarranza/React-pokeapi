@@ -4,7 +4,12 @@ import Grid from "@material-ui/core/Grid";
 import PokemonDetail from "./PokemonDetail";
 import Pagination from "./Pagination";
 
-export default ({ pokemonsList, handlePageChange, currentPage }) => {
+export default ({
+  pokemonsList,
+  handlePageChange,
+  currentPage,
+  totalPages,
+}) => {
   const [pokemonDetailsOpened, setPokemonDetailsOpened] = useState(false);
   const [pokemonSelected, setPokemonSelected] = useState(null);
 
@@ -33,6 +38,7 @@ export default ({ pokemonsList, handlePageChange, currentPage }) => {
       <Pagination
         handlePageChange={handlePageChange}
         currentPage={currentPage}
+        totalPages={totalPages}
       />
       <PokemonDetail
         pokemonDetailsOpened={pokemonDetailsOpened}

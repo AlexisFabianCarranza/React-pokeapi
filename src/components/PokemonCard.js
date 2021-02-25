@@ -3,32 +3,20 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import capitalizeFirstLetter from "../utils/helpers/capitalizeFirstLetter";
-import { useTheme } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import PokemonTypes from "./PokemonTypes";
+import PokemonImages from "./PokemonImages";
 
 export default ({ pokemonInfo, handlePokemonDetailOpen }) => {
-  const style = useTheme();
-
   const openPokemonDetail = () => {
     handlePokemonDetailOpen(pokemonInfo);
   };
-
+  console.log(pokemonInfo);
   return (
     <Paper style={{ margin: 20, borderRadius: 10, padding: 10 }}>
       <Grid container spacing={3} direction={"row"}>
-        <Grid item sm={12} md={6} lg={4} xs={12}>
-          <Paper
-            style={{
-              backgroundColor: style.palette.primary.light,
-              borderRadius: 10,
-            }}
-          >
-            <img
-              src={pokemonInfo.sprites.front_default}
-              alt={pokemonInfo.name}
-            />
-          </Paper>
+        <Grid item sm={12} md={6} lg={12} xs={12}>
+          <PokemonImages pokemonInfo={pokemonInfo} />
         </Grid>
         <Grid item sm={12} md={6} lg={8} xs={12}>
           <Grid container direction={"row"} spacing={1}>

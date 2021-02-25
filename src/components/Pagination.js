@@ -3,7 +3,7 @@ import LinearProgress from "./LinearProgress";
 import Pagination from "@material-ui/lab/Pagination";
 import Grid from "@material-ui/core/Grid";
 
-export default ({ currentPage, handlePageChange }) => {
+export default ({ currentPage, handlePageChange, totalPages }) => {
   return (
     <Grid
       container
@@ -18,7 +18,7 @@ export default ({ currentPage, handlePageChange }) => {
         </div>
 
         <Pagination
-          count={10}
+          count={totalPages}
           color="secondary"
           variant="outlined"
           page={currentPage}

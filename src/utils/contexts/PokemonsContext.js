@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { getPokemonsList } from "../../repositories/pokemonsRepository";
 import { get } from "../../utils/http/HttpService";
 import { LoadingContext } from "./LoadingContext";
+import calculateTotalPages from "../helpers/calculateTotalPages";
 
 export const PokemonsContext = createContext();
 
@@ -10,6 +11,7 @@ const initialPokemonsState = {
   offset: 0,
   limit: 5,
   currentPage: 1,
+  totalPages: 10,
 };
 
 const useStateContext = () => {
@@ -30,6 +32,7 @@ const useStateContext = () => {
       setPokemonsState((oldPokemonsState) => ({
         ...oldPokemonsState,
         pokemonsList: pockemonDetails,
+        totalPages: calculateTotalPages(result.count, pokemonsState.limit),
       }));
       setTimeout(() => {
         changeIsLoading(false);
