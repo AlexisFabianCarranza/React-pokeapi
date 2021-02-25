@@ -24,27 +24,34 @@ export default ({
   };
 
   return (
-    <>
-      <Grid container spacing={3}>
-        {pokemonsList.map((pokemonInfo) => (
-          <Grid item sm={12} md={6} lg={4} xs={12}>
-            <PokemonCard
-              pokemonInfo={pokemonInfo}
-              handlePokemonDetailOpen={handlePokemonDetailOpen}
-            />
-          </Grid>
-        ))}
+    <Grid
+      container
+      direction="column"
+      justify="space-between"
+      alignItems="center"
+    >
+      <Grid item sm={12} md={6} lg={9} xs={12}>
+        <Grid container spacing={3}>
+          {pokemonsList.map((pokemonInfo) => (
+            <Grid item sm={12} md={6} lg={6} xs={12}>
+              <PokemonCard
+                pokemonInfo={pokemonInfo}
+                handlePokemonDetailOpen={handlePokemonDetailOpen}
+              />
+            </Grid>
+          ))}
+        </Grid>
+        <Pagination
+          handlePageChange={handlePageChange}
+          currentPage={currentPage}
+          totalPages={totalPages}
+        />
+        <PokemonDetail
+          pokemonDetailsOpened={pokemonDetailsOpened}
+          handlePokemonDetailClose={handlePokemonDetailClose}
+          pokemonInfo={pokemonSelected}
+        />
       </Grid>
-      <Pagination
-        handlePageChange={handlePageChange}
-        currentPage={currentPage}
-        totalPages={totalPages}
-      />
-      <PokemonDetail
-        pokemonDetailsOpened={pokemonDetailsOpened}
-        handlePokemonDetailClose={handlePokemonDetailClose}
-        pokemonInfo={pokemonSelected}
-      />
-    </>
+    </Grid>
   );
 };

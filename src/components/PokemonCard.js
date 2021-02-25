@@ -11,14 +11,14 @@ export default ({ pokemonInfo, handlePokemonDetailOpen }) => {
   const openPokemonDetail = () => {
     handlePokemonDetailOpen(pokemonInfo);
   };
-  console.log(pokemonInfo);
+
   return (
     <Paper style={{ margin: 20, borderRadius: 10, padding: 10 }}>
       <Grid container spacing={3} direction={"row"}>
-        <Grid item sm={12} md={6} lg={12} xs={12}>
+        <Grid item sm={12} md={6} lg={6} xs={12}>
           <PokemonImages pokemonInfo={pokemonInfo} />
         </Grid>
-        <Grid item sm={12} md={6} lg={8} xs={12}>
+        <Grid item sm={12} md={6} lg={6} xs={12}>
           <Grid container direction={"row"} spacing={1}>
             <Grid item xs={9}>
               <Typography align={"left"} variant={"h5"}>

@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Paper from "@material-ui/core/Paper";
 import { useTheme } from "@material-ui/core";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
-import "../utils/css/carousel.css";
+import Carousel from "./Carousel";
 
 export default ({ pokemonInfo }) => {
   const [pokemonImages, setPokemonImages] = useState([]);
@@ -31,13 +29,7 @@ export default ({ pokemonInfo }) => {
         borderRadius: 10,
       }}
     >
-      <Carousel showArrows={true} showThumbs={false}>
-        {pokemonImages.map((pokemonImage) => (
-          <div style={{ width: "100%", maxWidth: "500px" }}>
-            <img src={pokemonImage} alt={pokemonImage} />
-          </div>
-        ))}
-      </Carousel>
+      <Carousel images={pokemonImages} />
     </Paper>
   );
 };
