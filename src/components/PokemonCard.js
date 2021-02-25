@@ -19,7 +19,7 @@ export default ({ pokemonInfo, handlePokemonDetailOpen }) => {
           <PokemonImages pokemonInfo={pokemonInfo} />
         </Grid>
         <Grid item sm={12} md={6} lg={6} xs={12}>
-          <Grid container direction={"row"} spacing={1}>
+          <Grid container direction={"row"} spacing={3}>
             <Grid item xs={9}>
               <Typography align={"left"} variant={"h5"}>
                 {capitalizeFirstLetter(pokemonInfo.name)}
@@ -33,7 +33,14 @@ export default ({ pokemonInfo, handlePokemonDetailOpen }) => {
             <Grid item xs={12}>
               <PokemonTypes pokemonTypes={pokemonInfo.types} />
             </Grid>
-            <Grid item xs={12}>
+            <Grid
+              item
+              xs={12}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
               <Button
                 variant="outlined"
                 color="secondary"

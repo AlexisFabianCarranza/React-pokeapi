@@ -24,7 +24,7 @@ export default () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            News
+            Pokemons
           </Typography>
         </Toolbar>
       </AppBar>

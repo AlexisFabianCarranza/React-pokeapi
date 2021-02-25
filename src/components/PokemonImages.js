@@ -24,6 +24,7 @@ export default ({ pokemonInfo }) => {
     <Paper
       style={{
         display: "flex",
+        height: "100%",
         justifyContent: "center",
         backgroundColor: theme.palette.primary.light,
         borderRadius: 10,

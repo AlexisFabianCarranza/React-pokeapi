@@ -41,6 +41,8 @@ export default ({
             </Grid>
           ))}
         </Grid>
+      </Grid>
+      <Grid item>
         <Pagination
           handlePageChange={handlePageChange}
           currentPage={currentPage}
