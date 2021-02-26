@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { PokemonsContext } from "../utils/contexts/PokemonsContext";
 import DashboardUI from "../components/DashboardUI";
+import Container from "../components/Container";
 
 export default () => {
   const {
@@ -11,11 +12,13 @@ export default () => {
   } = useContext(PokemonsContext);
 
   return (
-    <DashboardUI
-      pokemonsList={pokemonsList}
-      currentPage={currentPage}
-      handlePageChange={handlePageChange}
-      totalPages={totalPages}
-    />
+    <Container>
+      <DashboardUI
+        pokemonsList={pokemonsList}
+        currentPage={currentPage}
+        handlePageChange={handlePageChange}
+        totalPages={totalPages}
+      />
+    </Container>
   );
 };

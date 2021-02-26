@@ -51,6 +51,12 @@ const useStateContext = () => {
     }));
   };
 
+  const getPokemonById = (pokemonId) => {
+    return pokemonsState.pokemonsList.find(
+      (pokemon) => pokemon.id === pokemonId
+    );
+  };
+
   useEffect(() => {
     fetchPockemonsList();
   }, [pokemonsState.offset]);
@@ -59,6 +65,7 @@ const useStateContext = () => {
     ...pokemonsState,
     fetchPockemonsList,
     handlePageChange,
+    getPokemonById,
   };
 };
 

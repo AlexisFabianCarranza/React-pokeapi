@@ -5,6 +5,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core";
+import Link from "./Link";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,12 +21,16 @@ export default () => {
     <div className={classes.root}>
       <AppBar position="static" color={"inherit"}>
         <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Pokemons
-          </Typography>
+          <Link to={"/"}>
+            <IconButton edge="start" color="inherit" aria-label="menu">
+              <MenuIcon />
+            </IconButton>
+          </Link>
+          <Link to={"/"}>
+            <Typography variant="h6" className={classes.title}>
+              Pokemons
+            </Typography>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>
