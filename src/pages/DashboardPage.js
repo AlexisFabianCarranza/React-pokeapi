@@ -1,7 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { PokemonsContext } from "../utils/contexts/PokemonsContext";
 import DashboardUI from "../components/DashboardUI";
 import Container from "../components/Container";
+import Modal from "@material-ui/core/Modal";
+import PokemonDetailUI from "../components/PokemonDetailUI";
+import Button from "@material-ui/core/Button";
+import { useMediaQuery, useTheme } from "@material-ui/core";
 
 export default () => {
   const {
