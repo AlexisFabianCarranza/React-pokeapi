@@ -29,31 +29,3 @@ export default (pokemonType) => {
     return defaultColor;
   }
 };
-/*export default (pokemonType) => {
-  switch (pokemonType) {
-    case "normal":
-      return "grey";
-    case "fighting":
-      return "grey";
-    case "flying":
-      return "grey";
-    case "poison":
-      return "red";
-    case "ground":
-      return "red";
-    case "rock":
-      return "red";
-    case "bug":
-      return "red";
-    case "ghost":
-      return "red";
-    case "steel":
-      return "red";
-    case "fire":
-      return "red";
-    case "water":
-      return "red";
-    case "grass":
-      return "red";
-  }
-};*/

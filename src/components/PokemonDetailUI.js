@@ -6,8 +6,9 @@ import Divider from "@material-ui/core/Divider";
 import capitalizeFirstLetter from "../utils/helpers/capitalizeFirstLetter";
 import PokemonTitle from "./PokemonTitle";
 import PokemonDetailRow from "./PokemonDetailRow";
-import CircularProgressWithLabel from "./CircularProgressWithLabel";
 import PokemonStats from "./PokemonStats";
+import PokemonDetailSection from "./PokemonDetailSection";
+import PokemonTypes from "./PokemonTypes";
 
 export default ({ pokemonInfo }) => {
   console.log(pokemonInfo);
@@ -36,49 +37,36 @@ export default ({ pokemonInfo }) => {
               </Grid>
             </Grid>
             <Grid item sm={12} md={10} lg={10} xs={12}>
-              <Grid container>
+              <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <PokemonTitle
                     pokemonID={pokemonInfo.id}
                     pokemonName={capitalizeFirstLetter(pokemonInfo.name)}
                   />
                 </Grid>
-              </Grid>
-              <Grid item xs={12}>
-                <Paper
-                  style={{
-                    borderRadius: 20,
-                    borderColor: "white",
-                  }}
-                  variant="outlined"
-                >
-                  <Grid
-                    container
-                    spacing={2}
-                    justify={"center"}
-                    alignItems={"center"}
-                  >
-                    <Grid item xs={10}>
-                      <PokemonDetailRow
-                        value={pokemonInfo.weight + " kgs"}
-                        type={"weight"}
-                      />
-                      <Divider
-                        orientation={"horizontal"}
-                        variant={"fullWidth"}
-                      />
-                      <PokemonDetailRow
-                        value={pokemonInfo.height + " mts"}
-                        type={"height"}
-                      />
-                      <Divider
-                        orientation={"horizontal"}
-                        variant={"fullWidth"}
-                      />
-                      <PokemonStats pokemonInfo={pokemonInfo} />
-                    </Grid>
-                  </Grid>
-                </Paper>
+                <Grid item xs={6}>
+                  <PokemonDetailSection title={"Characteristics"}>
+                    <PokemonDetailRow
+                      value={pokemonInfo.weight + " kgs"}
+                      type={"weight"}
+                    />
+                    <Divider orientation={"horizontal"} variant={"fullWidth"} />
+                    <PokemonDetailRow
+                      value={pokemonInfo.height + " mts"}
+                      type={"height"}
+                    />
+                  </PokemonDetailSection>
+                </Grid>
+                <Grid item xs={6}>
+                  <PokemonDetailSection title={"Characteristics"}>
+                    <PokemonTypes pokemonTypes={pokemonInfo.types} />
+                  </PokemonDetailSection>
+                </Grid>
+                <Grid item xs={12}>
+                  <PokemonDetailSection title={"Stats"}>
+                    <PokemonStats pokemonInfo={pokemonInfo} />
+                  </PokemonDetailSection>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>

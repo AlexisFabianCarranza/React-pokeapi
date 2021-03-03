@@ -1,6 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import CircularProgressWithLabel from "./CircularProgressWithLabel";
+import capitalizeFirstLetter from "../utils/helpers/capitalizeFirstLetter";
 
 export default ({ pokemonInfo }) => {
   return (
@@ -14,7 +15,7 @@ export default ({ pokemonInfo }) => {
         <Grid item sm={6} md={4} lg={4} xs={6}>
           <CircularProgressWithLabel
             value={stats.base_stat}
-            label={stats.stat.name}
+            label={capitalizeFirstLetter(stats.stat.name)}
             maxSize={"100px"}
           />
         </Grid>

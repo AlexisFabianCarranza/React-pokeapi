@@ -7,7 +7,7 @@ export default ({ type, value }) => {
   return (
     <Grid container direction={"row"} spacing={3}>
       <Grid item sm={5} md={3} lg={3} xs={5}>
-        <Typography align={"left"} variant={"h5"}>
+        <Typography align={"left"} variant={"body1"}>
           {type}
         </Typography>
       </Grid>
@@ -15,7 +15,7 @@ export default ({ type, value }) => {
         <Divider orientation={"vertical"} />
       </Grid>
       <Grid item sm={5} md={7} lg={3} xs={5}>
-        <Typography align={"left"} variant={"h5"}>
+        <Typography align={"left"} variant={"body1"}>
           {value}
         </Typography>
       </Grid>
