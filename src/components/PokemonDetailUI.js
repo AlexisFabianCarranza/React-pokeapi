@@ -11,7 +11,6 @@ import PokemonDetailSection from "./PokemonDetailSection";
 import PokemonTypes from "./PokemonTypes";
 
 export default ({ pokemonInfo }) => {
-  console.log(pokemonInfo);
   return pokemonInfo ? (
     <Grid container direction="row" justify="center" alignItems="center">
       <Grid item sm={12} md={7} lg={7} xs={12}>
@@ -44,21 +43,21 @@ export default ({ pokemonInfo }) => {
                     pokemonName={capitalizeFirstLetter(pokemonInfo.name)}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item sm={12} md={6} lg={6} xs={12}>
                   <PokemonDetailSection title={"Characteristics"}>
                     <PokemonDetailRow
-                      value={pokemonInfo.weight + " kgs"}
-                      type={"weight"}
+                      value={Math.round(pokemonInfo.weight * 10) / 100 + " kg"}
+                      type={"Weight"}
                     />
                     <Divider orientation={"horizontal"} variant={"fullWidth"} />
                     <PokemonDetailRow
-                      value={pokemonInfo.height + " mts"}
-                      type={"height"}
+                      value={Math.round(pokemonInfo.height * 10) / 100 + " mts"}
+                      type={"Height"}
                     />
                   </PokemonDetailSection>
                 </Grid>
-                <Grid item xs={6}>
-                  <PokemonDetailSection title={"Characteristics"}>
+                <Grid item sm={12} md={6} lg={6} xs={12}>
+                  <PokemonDetailSection title={"Types"}>
                     <PokemonTypes pokemonTypes={pokemonInfo.types} />
                   </PokemonDetailSection>
                 </Grid>

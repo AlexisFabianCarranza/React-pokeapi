@@ -9,6 +9,7 @@ export default ({ children, title }) => {
       style={{
         borderRadius: 20,
         borderColor: "white",
+        height: "100%",
       }}
       variant="outlined"
     >
@@ -17,6 +18,8 @@ export default ({ children, title }) => {
           <Typography variant={"h5"} align={"center"}>
             {title}
           </Typography>
+        </Grid>
+        <Grid item xs={10}>
           {children}
         </Grid>
       </Grid>

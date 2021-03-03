@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Paper from "@material-ui/core/Paper";
 import { useTheme } from "@material-ui/core";
 import Carousel from "./Carousel";
-import Box from "@material-ui/core/Box";
 
 export default ({ pokemonInfo }) => {
   const [pokemonImages, setPokemonImages] = useState([]);
@@ -25,7 +24,6 @@ export default ({ pokemonInfo }) => {
     <Paper
       style={{
         display: "flex",
-        height: "100%",
         justifyContent: "center",
         backgroundColor: theme.palette.primary.light,
         borderRadius: 10,

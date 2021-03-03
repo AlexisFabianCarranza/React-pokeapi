@@ -52,9 +52,17 @@ const useStateContext = () => {
   };
 
   const getPokemonById = (pokemonId) => {
-    return pokemonsState.pokemonsList.find(
+    const pokemon = pokemonsState.pokemonsList.find(
       (pokemon) => pokemon.id === pokemonId
     );
+    if (pokemon) {
+      return pokemon;
+    } else {
+      setPokemonsState((oldPokemonState) => ({
+        ...oldPokemonState,
+        offset: pokemonId - 2,
+      }));
+    }
   };
 
   useEffect(() => {

@@ -5,7 +5,7 @@ import Divider from "@material-ui/core/Divider";
 
 export default ({ type, value }) => {
   return (
-    <Grid container direction={"row"} spacing={3}>
+    <Grid container direction={"row"} spacing={0}>
       <Grid item sm={5} md={3} lg={3} xs={5}>
         <Typography align={"left"} variant={"body1"}>
           {type}

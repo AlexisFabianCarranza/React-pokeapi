@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 
 export default ({ pokemonTypes }) => {
   return (
-    <Grid container justify={"center"}>
+    <Grid container direction="row" justify="space-evenly" alignItems="center">
       {pokemonTypes.map((typeInfo) => (
         <Grid item xs={3}>
           <Chip
