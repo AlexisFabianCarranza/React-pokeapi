@@ -17,6 +17,7 @@ export default ({ value, label, maxSize }) => {
       <Grid item xs={6}>
         <div style={{ maxWidth: maxSize, maxHeight: maxSize }}>
           <CircularProgressbar
+            className={"circularProgress"}
             value={value}
             text={`${value}%`}
             styles={buildStyles({
@@ -27,7 +28,7 @@ export default ({ value, label, maxSize }) => {
         </div>
       </Grid>
       <Grid item xs={6}>
-        <Typography align={"center"} variant={"body1"}>
+        <Typography align={"center"} variant={"body1"} className={"label"}>
           {label}
         </Typography>
       </Grid>
