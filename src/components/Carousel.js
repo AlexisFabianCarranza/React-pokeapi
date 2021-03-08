@@ -38,7 +38,11 @@ export default ({ images }) => {
     <Grid container direction="row" justify="space-between" alignItems="center">
       <Grid item xs={2}>
         {currentImage !== 0 && (
-          <IconButton size="medium" onClick={prevImage}>
+          <IconButton
+            className={"arrowLeftButton"}
+            size="medium"
+            onClick={prevImage}
+          >
             <ArrowLeftIcon fontSize="inherit" />
           </IconButton>
         )}
@@ -54,6 +58,7 @@ export default ({ images }) => {
       >
         {images.length !== 0 ? (
           <img
+            className={"currentImage"}
             src={images[currentImage]}
             alt={images[currentImage]}
             style={{ width: imageWidth, height: imageHeight }}
@@ -64,7 +69,11 @@ export default ({ images }) => {
       </Grid>
       <Grid item xs={2}>
         {currentImage !== images.length - 1 && (
-          <IconButton size="medium" onClick={nextImage}>
+          <IconButton
+            className={"arrowRightButton"}
+            size="medium"
+            onClick={nextImage}
+          >
             <ArrowRightIcon fontSize="inherit" />
           </IconButton>
         )}

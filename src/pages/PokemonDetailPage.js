@@ -10,8 +10,12 @@ export default () => {
   const { getPokemonById, pokemonsList } = useContext(PokemonsContext);
 
   useEffect(() => {
+    const getPokemonInfo = async () => {
+      const pokemonInfoTmp = await getPokemonById(parseInt(pokemonId));
+      setPokemonInfo(pokemonInfoTmp);
+    };
     if (pokemonsList.length > 0) {
-      setPokemonInfo(getPokemonById(parseInt(pokemonId)));
+      getPokemonInfo();
     }
   }, [pokemonsList]);
 

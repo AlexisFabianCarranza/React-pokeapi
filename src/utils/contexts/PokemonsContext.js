@@ -1,5 +1,8 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { getPokemonsList } from "../../repositories/pokemonsRepository";
+import {
+  getPokemonDetail,
+  getPokemonsList,
+} from "../../repositories/pokemonsRepository";
 import { get } from "../../utils/http/HttpService";
 import { LoadingContext } from "./LoadingContext";
 import calculateTotalPages from "../helpers/calculateTotalPages";
@@ -51,17 +54,17 @@ const useStateContext = () => {
     }));
   };
 
-  const getPokemonById = (pokemonId) => {
+  const getPokemonById = async (pokemonId) => {
     const pokemon = pokemonsState.pokemonsList.find(
       (pokemon) => pokemon.id === pokemonId
     );
     if (pokemon) {
       return pokemon;
-    } else {
-      setPokemonsState((oldPokemonState) => ({
-        ...oldPokemonState,
-        offset: pokemonId - 2,
-      }));
+    }
+    try {
+      return await getPokemonDetail(pokemonId);
+    } catch (e) {
+      console.error("Error-GetPokemonDetail");
     }
   };
 
