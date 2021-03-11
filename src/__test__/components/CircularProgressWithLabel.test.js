@@ -5,7 +5,7 @@ import CircularProgressWithLabel from "../../components/CircularProgressWithLabe
 
 configure({ adapter: new Adapter() });
 
-it("should render a graphic with a label and porcentage", () => {
+it("should render a graphic with a label and percentage", () => {
   const value = 90;
   const label = "HP";
   const maxSize = "100px";

@@ -28,7 +28,7 @@ export default () => {
           </Link>
           <Link to={"/"}>
             <Typography variant="h6" className={classes.title}>
-              Pokemons
+              Pokemon's
             </Typography>
           </Link>
         </Toolbar>
