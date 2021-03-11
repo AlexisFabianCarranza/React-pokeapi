@@ -73,7 +73,7 @@ export default ({ pokemonInfo }) => {
       </Grid>
     </Grid>
   ) : (
-    <h1>NOT FOUND</h1>
+    <h1 className={"notFound"}>NOT FOUND</h1>
   );
 };
 //
